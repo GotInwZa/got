@@ -31,14 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $description = $title;
     }
 
-    $status = "available";
-
     $sql_insert = "INSERT INTO books (title, description, theme, author)
-                   VALUES (?, ?, ?, ?, ?)";
+                   VALUES (?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql_insert);
     $stmt->bind_param(
-        "ssiss",
+        "ssis",
         $title,
         $description,
         $theme_id,
@@ -47,7 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->execute();
     $stmt->close();
 
-    $success = true;
 }
 ?>
 <!DOCTYPE html>
