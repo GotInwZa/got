@@ -99,10 +99,10 @@ $result = $stmt->get_result();
                 <?php while ($row = $result->fetch_assoc()): ?>
                 <tr>
                     <td><?= $row["book_id"] ?></td>
-                    <td><?= htmlspecialchars($row["title"]) ?></td>
-                    <td><?= htmlspecialchars($row["description"]) ?></td>
-                    <td><?= htmlspecialchars($row["theme_name"]) ?></td>
-                    <td><?= htmlspecialchars($row["author"]) ?></td>
+                    <td class="text-left"><?= htmlspecialchars($row["title"]) ?></td>
+                    <td class="text-left"><?= htmlspecialchars($row["description"]) ?></td>
+                    <td class="text-left"><?= htmlspecialchars($row["theme_name"]) ?></td>
+                    <td class="text-left"><?= htmlspecialchars($row["author"]) ?></td>
                     <td>
                         <?php if ($row["status"] === 0): ?>
                             <span class="badge bg-success">ว่าง</span>
