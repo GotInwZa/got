@@ -119,7 +119,7 @@ $result = $stmt->get_result();
                             <span class="badge bg-danger">คืน</span>
                         <?php endif; ?>
                     </td>
-                    <td><?= $row['log_time'] ?></td>
+                    <td><?= $row['logs_time'] ?></td>
                 </tr>
             <?php endwhile; ?>
         <?php else: ?>
