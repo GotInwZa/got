@@ -29,25 +29,30 @@ SELECT
 FROM books_log bl
 JOIN users u ON u.user_id = bl.user_id
 JOIN books b ON b.book_id = bl.book_id
-WHERE
 ";
 
+$where = [];
 $params = [];
 $types = "";
 
 // user เห็นเฉพาะของตัวเอง
 if ($role === 'user') {
-    $sql .= " bl.user_id = ?";
+    $where[] = "bl.user_id = ?";
     $types .= "i";
     $params[] = $user_id;
 }
 
 // search
 if (!empty($search)) {
-    $sql .= " AND (b.title LIKE ? OR u.hostname LIKE ?)";
+    $where[] = "(b.title LIKE ? OR u.hostname LIKE ?)";
     $types .= "ss";
     $params[] = "%$search%";
     $params[] = "%$search%";
+}
+
+// ถ้ามีเงื่อนไขค่อยเติม WHERE
+if (!empty($where)) {
+    $sql .= " WHERE " . implode(" AND ", $where);
 }
 
 $sql .= " ORDER BY bl.logs_time DESC LIMIT ?";
