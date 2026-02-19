@@ -1,5 +1,6 @@
 <?php
 require_once '../config/connectdb.php';
+require_once '../nav.php';
 session_start();
 
 /* ====== เช็คสิทธิ์ ====== */
@@ -38,8 +39,14 @@ $result = $stmt->get_result();
 <body class="bg-light">
 
 <div class="container mt-5">
-    <h3 class="mb-4">รายชื่อผู้ใช้ในระบบ</h3>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="mb-0">รายชื่อผู้ใช้ในระบบ</h3>
 
+        <a href="create_user.php"
+        class="btn btn-warning text-dark fw-bold">
+            + Create User
+        </a>
+    </div>
     <div class="table-responsive">
         <table class="table table-bordered table-striped align-middle text-center">
             <thead class="table-dark">
