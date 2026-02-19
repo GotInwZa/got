@@ -1,11 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-session_start();
-?>
-
-<?php
-include 'config/db.php'; // ไฟล์เชื่อมต่อฐานข้อมูล
+include 'config/connectdb.php'; // ไฟล์เชื่อมต่อฐานข้อมูล
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
