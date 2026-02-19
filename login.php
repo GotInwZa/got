@@ -33,10 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             // เช็ค role
             if ($row["role"] === "admin") {
-                header("Location: got/admin/admin_user.php");
+                header("Location: admin/admin_user.php");
                 exit;
             } elseif ($row["role"] === "user") {
-                header("Location: got/user/books.php");
+                header("Location: user/books.php");
                 exit;
             }
         } else {
