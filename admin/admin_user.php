@@ -42,7 +42,7 @@ $result = $stmt->get_result();
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h3 class="mb-0">รายชื่อผู้ใช้ในระบบ</h3>
 
-        <a href="create_user.php"
+        <a href="admin_create_user.php"
         class="btn btn-warning text-dark fw-bold">
             + Create User
         </a>
