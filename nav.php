@@ -5,7 +5,7 @@ session_start();
 $role = $_SESSION['role'] ?? null;
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       การยืมหนังสือบนอุปกรณ์เคลื่อนที่
