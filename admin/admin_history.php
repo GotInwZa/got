@@ -50,7 +50,7 @@ if (!empty($search)) {
     $params[] = "%$search%";
 }
 
-$sql .= " ORDER BY bl.log_time DESC LIMIT ?";
+$sql .= " ORDER BY bl.logs_time DESC LIMIT ?";
 $types .= "i";
 $params[] = $limit;
 
