@@ -1,10 +1,10 @@
 <?php
-include 'config/connectdb.php';
+require_once '../config/connectdb.php';
 session_start();
 
 /* ====== เช็คสิทธิ์ ====== */
 if (!isset($_SESSION["login"]) || $_SESSION["login"] !== true) {
-    header("Location: ../login.php");
+    header(header: "Location: ../login.php");
     exit;
 }
 
