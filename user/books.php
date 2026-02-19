@@ -104,7 +104,7 @@ $result = $stmt->get_result();
                     <td><?= htmlspecialchars($row["theme_name"]) ?></td>
                     <td><?= htmlspecialchars($row["author"]) ?></td>
                     <td>
-                        <?php if ($row["status"] === "available"): ?>
+                        <?php if ($row["status"] === 0): ?>
                             <span class="badge bg-success">ว่าง</span>
                         <?php else: ?>
                             <span class="badge bg-danger">ถูกยืม</span>
