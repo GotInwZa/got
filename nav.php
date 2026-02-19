@@ -20,21 +20,21 @@ $role = $_SESSION['role'] ?? null;
 
         <?php if ($role === 'admin'): ?>
           <li class="nav-item">
-            <a class="nav-link" href="admin/admin_user.php">User</a>
+            <a class="nav-link" href="admin_user.php">User</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin/admin_books.php">Book</a>
+            <a class="nav-link" href="admin_books.php">Book</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin/admin_history.php">History</a>
+            <a class="nav-link" href="admin_history.php">History</a>
           </li>
 
         <?php elseif ($role === 'user'): ?>
           <li class="nav-item">
-            <a class="nav-link" href="user/books.php">Book</a>
+            <a class="nav-link" href="books.php">Book</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="user/history.php">History</a>
+            <a class="nav-link" href="history.php">History</a>
           </li>
         <?php endif; ?>
 
