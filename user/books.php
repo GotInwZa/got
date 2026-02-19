@@ -111,14 +111,17 @@ $result = $stmt->get_result();
                         <?php endif; ?>
                     </td>
                     <td>
+                        <?php if ($row["status"] === 0): ?>
                         <a href="borrow.php?book_id=<?= $row["book_id"] ?>"
                            class="btn btn-sm btn-primary">
                            ยืม
                         </a>
+                        <?php else: ?>
                         <a href="return.php?book_id=<?= $row["book_id"] ?>"
                            class="btn btn-sm btn-secondary">
                            คืน
                         </a>
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <?php endwhile; ?>
