@@ -1,5 +1,6 @@
 <?php
 require_once '../config/connectdb.php';
+require_once '../nav.php';
 session_start();
 
 /* ====== เช็คสิทธิ์ ====== */
