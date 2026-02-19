@@ -3,15 +3,15 @@ require_once '../config/connectdb.php';
 require_once '../nav.php';
 session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 /* ====== เช็คสิทธิ์ ====== */
 if (!isset($_SESSION["login"]) || $_SESSION["login"] !== true) {
     header(header: "Location: ../login.php");
     exit;
 }
+
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 $role = $_SESSION['role'];
 $user_id = $_SESSION['user_id'];
