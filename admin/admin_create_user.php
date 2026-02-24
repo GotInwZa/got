@@ -43,17 +43,32 @@ if (isset($_POST['save'])) {
             $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
             /* ====== เพิ่มผู้ใช้ ====== */
-            $sql_insert = "INSERT INTO users (username, password, hostname, role, add_by)
-                           VALUES (?, ?, ?, ?, ?)";
-            $stmt_insert = $conn->prepare($sql_insert);
-            $stmt_insert->bind_param(
-                "sssii",
-                $username,
-                $hash_password,
-                $hostname,
-                $role,
-                $_SESSION["role"]
-            );
+            if($_SESSION["add_by"] !== 3){
+                $sql_insert = "INSERT INTO users (username, password, hostname, role, add_by)
+                            VALUES (?, ?, ?, ?, ?)";
+                $stmt_insert = $conn->prepare($sql_insert);
+                $stmt_insert->bind_param(
+                    "sssii",
+                    $username,
+                    $hash_password,
+                    $hostname,
+                    $role,
+                    $_SESSION["role"]
+                );
+            }
+            else{
+                $sql_insert = "INSERT INTO users (username, password, hostname, role, add_by)
+                            VALUES (?, ?, ?, ?, ?)";
+                $stmt_insert = $conn->prepare($sql_insert);
+                $stmt_insert->bind_param(
+                    "sssii",
+                    $username,
+                    $hash_password,
+                    $hostname,
+                    $role,
+                    3
+                );
+            }
 
             if ($stmt_insert->execute()) {
                 $success = "เพิ่มผู้ใช้เรียบร้อยแล้ว";
