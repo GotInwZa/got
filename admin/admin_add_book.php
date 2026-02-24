@@ -32,16 +32,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $description = $title;
     }
 
-    $sql_insert = "INSERT INTO books (title, description, theme, author)
-                   VALUES (?, ?, ?, ?)";
+    $sql_insert = "INSERT INTO books (title, description, theme, author,add_by)
+                   VALUES (?, ?, ?, ?,?)";
 
     $stmt = $conn->prepare($sql_insert);
     $stmt->bind_param(
-        "ssis",
+        "ssisi",
         $title,
         $description,
         $theme_id,
-        $author
+        $author,
+        $_SESSION["role"]
     );
     $stmt->execute();
     $stmt->close();

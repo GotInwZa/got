@@ -32,10 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["role"] = $row["role"];
 
             // เช็ค role
-            if ($row["role"] === "admin") {
+            if ($row["role"] === 1) {
                 header("Location: admin/admin_user.php");
                 exit;
-            } elseif ($row["role"] === "user") {
+            } elseif ($row["role"] === 2) {
                 header("Location: user/books.php");
                 exit;
             }
@@ -85,6 +85,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 Login
             </button>
         </form>
+        <div class="text-end mt-3">
+            <a href="guide.php"
+            class="text-decoration-none text-secondary small">
+                อ่านคู่มือผู้ใช้
+            </a>
+        </div>
     </div>
 </div>
 

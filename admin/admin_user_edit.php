@@ -4,7 +4,7 @@ require_once '../nav.php';
 session_start();
 
 /* ====== เช็คสิทธิ์ ====== */
-if (!isset($_SESSION['login']) || $_SESSION['login'] !== true || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['login']) || $_SESSION['login'] !== true || $_SESSION['role'] !== 1) {
     header("Location: ../login.php");
     exit;
 }
@@ -111,7 +111,7 @@ if (isset($_POST['save'])) {
                 <div class="mb-3">
                     <label class="form-label">Role</label>
                     <select name="role" class="form-select" required>
-                        <option value="admin" <?= $user['role']=='admin'?'selected':'' ?>>Admin</option>
+                        <option value="admin" <?= $user['role']==1?'selected':'' ?>>Admin</option>
                         <option value="user" <?= $user['role']=='user'?'selected':'' ?>>User</option>
                     </select>
                 </div>

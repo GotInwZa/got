@@ -36,7 +36,7 @@ $params = [];
 $types = "";
 
 // user เห็นเฉพาะของตัวเอง
-if ($role === 'user') {
+if ($role === 2) {
     $where[] = "bl.user_id = ?";
     $types .= "i";
     $params[] = $user_id;
