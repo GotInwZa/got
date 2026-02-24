@@ -4,7 +4,7 @@ require_once '../nav.php';
 session_start();
 
 /* ====== เช็คสิทธิ์ ====== */
-if (!isset($_SESSION["login"]) || $_SESSION["login"] !== true) {
+if (!isset($_SESSION["login"]) || $_SESSION["login"] !== true || $_SESSION["role"] == 2) {
     header(header: "Location: ../login.php");
     exit;
 }
@@ -73,8 +73,13 @@ $result = $stmt->get_result();
 <body class="bg-light">
 
 <div class="container mt-4">
-    <h3 class="mb-3">รายการหนังสือทั้งหมด</h3>
-
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="mb-0">รายการหนังสือทั้งหมด</h3>
+        <a href="admin_add_book.php"
+        class="btn btn-warning text-dark fw-bold">
+            + เพิ่มหนังสือ
+        </a>
+    </div>
     <!-- Search + Limit -->
     <form method="get" class="row g-2 mb-3">
         <div class="col-md-6">
