@@ -9,9 +9,9 @@ if (!isset($_SESSION["login"]) || $_SESSION["login"] !== true || $_SESSION["role
     exit;
 }
 
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 $error = "";
 $success = "";
@@ -43,15 +43,16 @@ if (isset($_POST['save'])) {
             $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
             /* ====== เพิ่มผู้ใช้ ====== */
-            $sql_insert = "INSERT INTO users (username, password, hostname, role)
-                           VALUES (?, ?, ?, ?)";
+            $sql_insert = "INSERT INTO users (username, password, hostname, role,add_by)
+                           VALUES (?, ?, ?, ?, ?)";
             $stmt_insert = $conn->prepare($sql_insert);
             $stmt_insert->bind_param(
                 "sssi",
                 $username,
                 $hash_password,
                 $hostname,
-                $role
+                $role,
+                $_SESSION["role"]
             );
 
             if ($stmt_insert->execute()) {
