@@ -9,9 +9,9 @@ if (!isset($_SESSION["login"]) || $_SESSION["login"] !== true || $_SESSION["role
     exit;
 }
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 $error = "";
 $success = "";
@@ -47,7 +47,7 @@ if (isset($_POST['save'])) {
                            VALUES (?, ?, ?, ?)";
             $stmt_insert = $conn->prepare($sql_insert);
             $stmt_insert->bind_param(
-                "ssss",
+                "sssi",
                 $username,
                 $hash_password,
                 $hostname,
