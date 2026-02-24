@@ -33,6 +33,23 @@ if($_SESSION["role"] !== 3 && $_SESSION["add_by"] !== 3){
     ORDER BY theme.theme_name ASC
     LIMIT ?
     ";
+}else if($_SESSION["role"] == 1 && $_SESSION["add_by"] == 1){
+    $sql = "
+    SELECT
+        books.book_id,
+        books.title,
+        books.description,
+        theme.theme_name,
+        books.author,
+        books.status
+    FROM books
+    JOIN theme ON theme.theme_id = books.theme
+    WHERE books.title LIKE ?
+    OR books.author LIKE ?
+    OR theme.theme_name LIKE ?
+    ORDER BY theme.theme_name ASC
+    LIMIT ?
+    ";
 }else{
     $sql = "
     SELECT
