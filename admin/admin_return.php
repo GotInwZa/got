@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <button type="submit" class="btn btn-primary">
                     Save
                 </button>
-                <a href="books.php" class="btn btn-secondary">
+                <a href="admin_books.php" class="btn btn-secondary">
                     กลับ
                 </a>
             </form>
