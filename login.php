@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["role"] = $row["role"];
 
             // เช็ค role
-            if ($row["role"] === 1) {
+            if ($row["role"] === 1 || $row["role"] === 3) {
                 header("Location: admin/admin_user.php");
                 exit;
             } elseif ($row["role"] === 2) {
