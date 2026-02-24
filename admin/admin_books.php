@@ -15,7 +15,7 @@ $limit  = isset($_GET["limit"]) ? (int)$_GET["limit"] : 10;
 if ($limit <= 0) $limit = 10;
 
 /* ====== SQL ====== */
-if($_SESSION["role"] !== 3){
+if($_SESSION["role"] !== 3 && $_SESSION["add_by"] !== 3){
     $sql = "
     SELECT 
         books.book_id,
