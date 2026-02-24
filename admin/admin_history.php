@@ -119,9 +119,9 @@ $result = $stmt->get_result();
                     <td><?= htmlspecialchars($row['title']) ?></td>
                     <td>
                         <?php if ($row['status'] == 0): ?>
-                            <span class="badge bg-success">ยืม</span>
+                            <span class="badge bg-danger">ยืม</span>
                         <?php else: ?>
-                            <span class="badge bg-danger">คืน</span>
+                            <span class="badge bg-success">คืน</span>
                         <?php endif; ?>
                     </td>
                     <td><?= $row['logs_time'] ?></td>
