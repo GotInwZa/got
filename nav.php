@@ -40,7 +40,7 @@ $role = $_SESSION['role'] ?? null;
 
         <?php if ($role): ?>
           <li class="nav-item">
-            <a class="nav-link text-warning" href="login.php" onclick="logout()">Logout</a>
+            <a class="nav-link text-warning" href="../login.php" onclick="logout()">Logout</a>
           </li>
         <?php 
         '"<script>
