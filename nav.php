@@ -40,8 +40,13 @@ $role = $_SESSION['role'] ?? null;
 
         <?php if ($role): ?>
           <li class="nav-item">
-            <a class="nav-link text-warning" href="logout.php">Logout</a>
+            <a class="nav-link text-warning" href="login.php" onclick="logout()">Logout</a>
           </li>
+          <script>
+            function logout(){
+              <?php session_destroy(); ?>
+            }
+          </script>
         <?php endif; ?>
 
       </ul>
