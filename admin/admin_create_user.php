@@ -9,6 +9,10 @@ if (!isset($_SESSION["login"]) || $_SESSION["login"] !== true || $_SESSION["role
     exit;
 }
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $error = "";
 $success = "";
 
