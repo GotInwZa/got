@@ -47,7 +47,7 @@ if (isset($_POST['save'])) {
                            VALUES (?, ?, ?, ?, ?)";
             $stmt_insert = $conn->prepare($sql_insert);
             $stmt_insert->bind_param(
-                "sssi",
+                "sssii",
                 $username,
                 $hash_password,
                 $hostname,
