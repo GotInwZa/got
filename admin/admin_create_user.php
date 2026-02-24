@@ -43,7 +43,7 @@ if (isset($_POST['save'])) {
             $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
             /* ====== เพิ่มผู้ใช้ ====== */
-            $sql_insert = "INSERT INTO users (username, password, hostname, role,add_by)
+            $sql_insert = "INSERT INTO users (username, password, hostname, role, add_by)
                            VALUES (?, ?, ?, ?, ?)";
             $stmt_insert = $conn->prepare($sql_insert);
             $stmt_insert->bind_param(
