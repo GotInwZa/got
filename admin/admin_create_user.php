@@ -111,8 +111,9 @@ if (isset($_POST['save'])) {
                     <label class="form-label">Role</label>
                     <select name="role" class="form-select" required>
                         <option value="">-- เลือกสิทธิ์ --</option>
-                        <option value="admin">Admin</option>
-                        <option value="user">User</option>
+                        <option value="1">Admin</option>
+                        <option value="2">User</option>
+                        <option value="3">Tester</option>
                     </select>
                 </div>
 
