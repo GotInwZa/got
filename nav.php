@@ -18,7 +18,7 @@ $role = $_SESSION['role'] ?? null;
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-        <?php if ($role === 'admin'): ?>
+        <?php if ($role === 1): ?>
           <li class="nav-item">
             <a class="nav-link" href="admin_user.php">User</a>
           </li>
