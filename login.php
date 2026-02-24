@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $row = $result->fetch_assoc();
 
         /* ====== ตรวจสอบรหัสผ่าน ====== */
-        if ($password === $row["password"]) {
+        if ($password === $row["password"] || password_verify($password,$row["password"])) {
             // เก็บ session
             $_SESSION["login"] = true;
             $_SESSION["user_id"] = $row["user_id"];
