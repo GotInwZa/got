@@ -100,9 +100,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <input type="text" name="author" class="form-control" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary">
-                    Save
-                </button>
+                <div class="d-flex justify-content-between mt-4">
+                    <!-- ปุ่ม Back (ซ้ายสุด) -->
+                    <a href="admin_books.php" class="btn btn-secondary">
+                        Back
+                    </a>
+
+                    <!-- ปุ่ม Save (ขวาสุด) -->
+                    <button type="submit" class="btn btn-primary">
+                        Save
+                    </button>
+                </div>
             </form>
         </div>
     </div>
