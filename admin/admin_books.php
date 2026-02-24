@@ -139,12 +139,12 @@ $result = $stmt->get_result();
                     </td>
                     <td>
                         <?php if ($row["status"] === 0): ?>
-                        <a href="borrow.php?book_id=<?= $row["book_id"] ?>"
+                        <a href="admin_borrow.php?book_id=<?= $row["book_id"] ?>"
                            class="btn btn-sm btn-primary">
                            ยืม
                         </a>
                         <?php else: ?>
-                        <a href="return.php?book_id=<?= $row["book_id"] ?>"
+                        <a href="admin_return.php?book_id=<?= $row["book_id"] ?>"
                            class="btn btn-sm btn-secondary">
                            คืน
                         </a>
