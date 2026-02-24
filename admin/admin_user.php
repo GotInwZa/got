@@ -4,7 +4,7 @@ require_once '../nav.php';
 session_start();
 
 /* ====== เช็คสิทธิ์ ====== */
-if (!isset($_SESSION["login"]) || $_SESSION["login"] !== true) {
+if (!isset($_SESSION["login"]) || $_SESSION["login"] !== true || $_SESSION["role"] == 2) {
     header(header: "Location: ../login.php");
     exit;
 }
@@ -21,8 +21,9 @@ if (isset($_POST["delete_user_id"])) {
 }
 
 /* ====== ดึงข้อมูลผู้ใช้ ====== */
-$sql = "SELECT user_id, username, hostname, role FROM users";
+$sql = "SELECT user_id, username, hostname, role FROM users WHERE add_by = ?";
 $stmt = $conn->prepare($sql);
+$stmt->bind_param("i",$_SESSION["role"]);
 $stmt->execute();
 $result = $stmt->get_result();
 ?>
