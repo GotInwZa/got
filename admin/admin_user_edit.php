@@ -112,7 +112,8 @@ if (isset($_POST['save'])) {
                     <label class="form-label">Role</label>
                     <select name="role" class="form-select" required>
                         <option value="admin" <?= $user['role']==1?'selected':'' ?>>Admin</option>
-                        <option value="user" <?= $user['role']=='user'?'selected':'' ?>>User</option>
+                        <option value="user" <?= $user['role']==2?'selected':'' ?>>User</option>
+                        <option value="user" <?= $user['role']==3?'selected':'' ?>>Tester</option>
                     </select>
                 </div>
 
