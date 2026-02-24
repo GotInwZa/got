@@ -44,7 +44,10 @@ $role = $_SESSION['role'] ?? null;
           </li>
           <script>
             function logout(){
-              <?php session_destroy(); ?>
+              <?php
+                session_reset(); 
+                session_destroy(); 
+              ?>
             }
           </script>
         <?php endif; ?>
