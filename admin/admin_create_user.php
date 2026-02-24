@@ -66,7 +66,7 @@ if (isset($_POST['save'])) {
                     $hash_password,
                     $hostname,
                     $role,
-                    3
+                    $_SESSION["add_by"]
                 );
             }
 
