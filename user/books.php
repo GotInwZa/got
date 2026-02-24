@@ -26,9 +26,9 @@ if($_SESSION["role"] !== 3){
         books.status
     FROM books
     JOIN theme ON theme.theme_id = books.theme
-    WHERE books.title LIKE ?
+    WHERE (books.title LIKE ?
     OR books.author LIKE ?
-    OR theme.theme_name LIKE ?
+    OR theme.theme_name LIKE ?)
     AND books.add_by NOT LIKE 3
     ORDER BY theme.theme_name ASC
     LIMIT ?
@@ -44,9 +44,9 @@ if($_SESSION["role"] !== 3){
         books.status
     FROM books
     JOIN theme ON theme.theme_id = books.theme
-    WHERE books.title LIKE ?
+    WHERE (books.title LIKE ?
     OR books.author LIKE ?
-    OR theme.theme_name LIKE ?
+    OR theme.theme_name LIKE ?)
     AND books.add_by LIKE 3
     ORDER BY theme.theme_name ASC
     LIMIT ?
