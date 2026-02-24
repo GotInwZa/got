@@ -43,14 +43,14 @@ $role = $_SESSION['role'] ?? null;
             <a class="nav-link text-warning" href="../login.php" onclick="logout()">Logout</a>
           </li>
         <?php 
-        '"<script>
+        "<script>
             function logout(){
-              <?php
+              '<?php
                 session_reset(); 
                 session_destroy(); 
-              ?>
+              ?>'
             }
-          </script>"';
+          </script>";
         endif; ?>
 
       </ul>
