@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = trim(string: $_POST["password"]);
 
     /* ====== เตรียมคำสั่ง SQL แบบปลอดภัย ====== */
-    $sql = "SELECT user_id, username, password, role 
+    $sql = "SELECT user_id, username, password, role , add_by
             FROM users 
             WHERE username = ?";
 
@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["user_id"] = $row["user_id"];
             $_SESSION["username"] = $row["username"];
             $_SESSION["role"] = $row["role"];
+            $_SESSION["add_by"]=$row["add_by"];
 
             // เช็ค role
             if ($row["role"] === 1 || $row["role"] === 3) {

@@ -23,7 +23,7 @@ if (isset($_POST["delete_user_id"])) {
 /* ====== ดึงข้อมูลผู้ใช้ ====== */
 $sql = "SELECT user_id, username, hostname, role FROM users WHERE add_by = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i",$_SESSION["role"]);
+$stmt->bind_param("i",$_SESSION["add_by"]);
 $stmt->execute();
 $result = $stmt->get_result();
 ?>
