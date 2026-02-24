@@ -4,7 +4,7 @@ require_once '../nav.php';
 session_start();
 
 /* ====== เช็คสิทธิ์ ====== */
-if (!isset($_SESSION['login']) || $_SESSION['login'] !== true || $_SESSION['role'] !== 2) {
+if (!isset($_SESSION['login']) || $_SESSION['login'] !== true || $_SESSION['role'] == 2) {
     header("Location: ../login.php");
     exit;
 }
